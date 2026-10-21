@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    direction: rtl;
+}
+
+body {
+    background-color: theme('colors.edu.50');
+    color: theme('colors.ink.DEFAULT');
+}
+
+::selection {
+    background: theme('colors.edu.200');
+    color: theme('colors.edu.900');
+}
+
+:focus-visible {
+    outline: 2px solid theme('colors.edu.600');
+    outline-offset: 2px;
+}
+
+input[type='email'],
+input[type='number'],
+input[type='date'],
+input[type='time'],
+input[type='tel'] {
+    text-align: right;
+}
+input[type='email'],
+input[type='tel'] {
+    direction: ltr;
+}
+
+@layer components {
+
+   
+
+    .edu-bar {
+        @apply rounded-xl bg-edu-100 p-3 sm:p-4;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
